@@ -5,16 +5,16 @@ struct EMPLOYEE {
     char name[50];
     char designation[50];
     char gender[10];
-    char doj[15];  // Date of Joining
+    char doj[15];  
     float salary;
 };
 
-// a) Total number of employees
+
 void totalEmployees(int n) {
     printf("\nTotal number of employees: %d\n", n);
 }
 
-// b) Count male and female employees
+
 void countGender(struct EMPLOYEE emp[], int n) {
     int male = 0, female = 0;
     for (int i = 0; i < n; i++) {
@@ -27,7 +27,6 @@ void countGender(struct EMPLOYEE emp[], int n) {
     printf("\nFemale Employees: %d\n", female);
 }
 
-// c) Employees with salary > 10,000
 void highSalary(struct EMPLOYEE emp[], int n) {
     printf("\nEmployees with salary more than 10,000:\n");
     for (int i = 0; i < n; i++) {
@@ -36,7 +35,7 @@ void highSalary(struct EMPLOYEE emp[], int n) {
     }
 }
 
-// d) Employees with designation "Asst Manager"
+
 void asstManagers(struct EMPLOYEE emp[], int n) {
     printf("\nEmployees with designation 'Asst Manager':\n");
     for (int i = 0; i < n; i++) {
