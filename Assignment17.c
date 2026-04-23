@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+ 
 int main() {
     int i, n;
     float x, term, sum = 0;
