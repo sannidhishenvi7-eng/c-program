@@ -1,16 +1,16 @@
-// Reverse Digits
 #include <stdio.h>
 
-int main(){
-    int n,r;
+int main() {
+    int num,reversed=0,remainder;
+    printf("Enter a number: ");
+    scanf("%d",&num);
 
-    scanf("%d",&n);
-
-    while(n!=0){
-        r=n%10;
-        printf("%d ",r);
-        n/=10;
+    while(num!=0){
+        remainder =num%10;
+        reversed = reversed*10+remainder;
+        num = num/10;
     }
 
+printf("Reversed number = %d",reversed);
     return 0;
 }
