@@ -1,32 +1,26 @@
-// Sine Series
+17
 #include <stdio.h>
 
-int fact(int n){
-    int i,f=1;
-    for(i=1;i<=n;i++)
-        f*=i;
-    return f;
-}
+int main() {
+    int i, n;
+    float x, term, sum = 0;
 
-int main(){
-    int n,i;
-    float x,sum=0;
+    printf("Enter value of x (in radians): ");
+    scanf("%f", &x);
 
-    scanf("%f %d",&x,&n);
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
 
-    for(i=0;i<n;i++){
-        int sign = (i%2==0)?1:-1;
-        int power = 2*i+1;
+    term = x;  
 
-        float term = sign;
-        for(int j=1;j<=power;j++)
-            term*=x;
+    for(i = 1; i <= n; i++) {
+        sum = sum + term;
 
-        term /= fact(power);
-        sum += term;
+        
+        term = -term * x * x / ((2*i) * (2*i + 1));
     }
 
-    printf("%.6f",sum);
+    printf("Value of sin(x) = %f\n", sum);
 
     return 0;
 }
