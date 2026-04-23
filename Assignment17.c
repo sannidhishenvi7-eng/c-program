@@ -1,4 +1,3 @@
-17
 #include <stdio.h>
 
 int main() {
