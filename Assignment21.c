@@ -1,20 +1,29 @@
-// File Copy
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    FILE *f1,*f2;
+
+int main()
+{   FILE *source, *dest;
     char ch;
+    char sourcePath[100], destPath[100];
 
-    f1=fopen("source.txt","r");
-    f2=fopen("dest.txt","w");
+    printf("Enter source file name:");
+    scanf("%s",sourcePath);
+    printf("Enter Destination File Name: ");
+    scanf("%s",destPath);
+     
+    source = fopen(sourcePath,"r");
+    dest=fopen(destPath,"w");
+  
+    while((ch = fgetc(source)) != EOF){
+        fputc(ch,dest);
 
-    while((ch=fgetc(f1))!=EOF)
-        fputc(ch,f2);
+    }
+    printf("FILE Copied");
 
-    printf("Copied");
-
-    fclose(f1);
-    fclose(f2);
+    fclose(source);
+    fclose(dest);
 
     return 0;
+
 }
